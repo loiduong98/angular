@@ -1,0 +1,6 @@
+<p>{{message}}</p>
+
+<!-- <input type="text" value="{{message}}"/> -->
+<input type="text" [value]="message" #name/>
+
+<button (click)="changeMess(name.value)">Click</button>
