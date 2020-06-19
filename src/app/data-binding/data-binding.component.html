@@ -1,6 +1,7 @@
-<p>{{message}}</p>
+<p>{{fullName}}</p>
 
 <!-- <input type="text" value="{{message}}"/> -->
-<input type="text" [value]="message" #name/>
-
-<button (click)="changeMess(name.value)">Click</button>
+<input type="text" 
+    [value]="fullName" 
+    #refFullName
+    (change)="changeInputData(refFullName.value)"/>
