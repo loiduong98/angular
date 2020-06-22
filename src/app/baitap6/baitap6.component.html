@@ -1,0 +1,35 @@
+<h5 class="bg-dark text-white p-3">Quản lý danh sách sản phẩm</h5>
+<form>
+    <div class="form-group">
+        <label for="">Mã SP</label>
+        <input class="form-control" type="text" placeholder="Mã sản phẩm" #masp>
+    </div>
+    <div class="form-group">
+        <label for="">Tên sản phẩm</label>
+        <input class="form-control" type="text" placeholder="Tên sản phẩm" #tensp>
+    </div>
+    <div class="form-group">
+        <label for="">Giá</label>
+        <input class="form-control" type="text" placeholder="Giá" #gia>
+    </div>
+    <button type="button" class="btn btn-success mb-2" (click)="addProduct(masp.value, tensp.value, gia.value)">Thêm sản phẩm</button>
+</form>
+
+<table class="table table-light">
+    <tr class="bg-dark text-white">
+        <td>STT</td>
+        <td>Mã SP</td>
+        <td>Tên SP</td>
+        <td>Giá</td>
+    </tr>
+    <tr *ngFor="let sp of dssp; 
+                let i = index; 
+                let odd = odd
+                let even = even"
+                [ngClass] = "{'bg-primary': odd, 'bg-success':even}">
+        <td>{{i + 1}}</td>
+        <td>{{sp.maSP}}</td>
+        <td>{{sp.tenSP}}</td>
+        <td>{{(sp.gia).toLocaleString()}} VND</td>
+    </tr>
+</table>

@@ -1,0 +1,75 @@
+<!-- <p>=====ngIf=====</p>
+<div *ngIf="isShow">
+    <p>Hello Loi</p>
+    <p>FE39</p>
+</div>
+<button (click)="toggle()">Show/Hide</button>
+
+<div *ngIf="!isLogin;else tamplateLogin">
+    <p>Bạn chưa đăng nhập</p>
+    <button (click)="Login()">Đăng nhập</button>
+</div>
+
+
+<ng-template #tamplateLogin>
+    <div *ngIf="isLogin">
+        <p>Xin chào bạn {{name}} !</p>
+        <button (click)="Logout()">Đăng xuất</button>
+    </div>
+</ng-template>
+
+<p>=====ngSwitch=====</p>
+<select name="color" [(ngModel)]="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="green">green</option>
+</select>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" style="background-color: red;">Màu đỏ</div>
+    <div *ngSwitchCase="'blue'" style="background-color: blue;">Màu xanh dương</div>
+    <div *ngSwitchCase="'green'" style="background-color: green;">Màu xanh lá</div>
+    <div *ngSwitchDefault style="background-color: red;">Màu đỏ</div>
+</div> -->
+
+<p>=====ngFor=====</p>
+
+<ng-container *ngIf="dssv">
+    <p *ngFor="let sv of dssv; let i = index; let total = count; let isFirst = first; let isLast = last">
+        {{i + 1}} - {{sv.hoTen}} - {{sv.lop}}
+    </p>
+</ng-container>
+
+<p>=====ngTemplateOutlet=====</p>
+    <ng-template #template1>
+        <p *ngFor="let sv of dssv; let i = index; let total = count; let isFirst = first; let isLast = last">
+            {{i + 1}} - {{sv.hoTen}} - {{sv.lop}}
+        </p>
+    </ng-template>
+
+<ng-container *ngTemplateOutlet="template1"></ng-container>
+
+<app-button>
+    Submit
+</app-button>
+
+<app-button>
+    Cancel
+</app-button>
+
+<p>=====ngClass=====</p>
+<div >
+    <p *ngFor="let sv of dssv; let i = index; let total = count; let isFirst = first; let isLast = last"
+    class="text-center"
+    [ngClass]="{'bg-secondary': isFirst, 'bg-success': isLast}">
+        {{i + 1}} - {{sv.hoTen}} - {{sv.lop}}
+    </p>
+</div>
+
+<p>=====ngStyle=====</p>
+<div [ngStyle]="{'background-color': color,'font-size': '56px'}">
+    ngStyle
+</div>
+
+    
+
+

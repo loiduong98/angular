@@ -7,6 +7,8 @@ import { DemoComponent } from './demo/demo.component';
 import {Baitap1Module} from './baitap1/baitap1.module'
 import {Baitap2Module} from './baitap2/baitap2.module'
 import { DataBindingModule } from './data-binding/data-binding.module';
+import { DirectivesModule } from './directives/directives.module';
+import { Baitap6Module } from './baitap6/baitap6.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { DataBindingModule } from './data-binding/data-binding.module';
     Baitap1Module,
     Baitap2Module,
     DataBindingModule,
+    DirectivesModule,
+    Baitap6Module,
   ],
   providers: [],
   bootstrap: [AppComponent]
